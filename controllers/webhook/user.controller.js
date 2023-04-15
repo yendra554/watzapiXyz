@@ -18,6 +18,7 @@ exports.getAllUsers = async (req, res, next) => {
 
 
 exports.sendMessage = async (req, res, next) => {
+    // console.log("sdfdfhgfhfghfghf", req)
     var menuData = [];
     var newMsg1 = req.body.message;
     var newMsg;
@@ -29,7 +30,7 @@ exports.sendMessage = async (req, res, next) => {
 
     var data = {
 
-        "api_key": "t8o8aP9tIBM6PLapJuj2KzJ5teiBbg",
+        "api_key": "9wfDCDPIQAHLxWR3IkwVOWyovy2Gm7",
         "sender": 919354869926,
         "number": req.body.number,
         "message": newMsg
@@ -39,14 +40,14 @@ exports.sendMessage = async (req, res, next) => {
 
 
     const Task1 = await userMenu.find({ perentMenu: data.message })
-  
+    
 if((Task1.length === 0)){
- 
+
     const userData = await userMenu.find({ menuTitle: Task1.perentMenu })
   
     if((data.message != "Hi") && (userData.length === 0)){
         obj = {
-            "api_key": "t8o8aP9tIBM6PLapJuj2KzJ5teiBbg",
+            "api_key": "9wfDCDPIQAHLxWR3IkwVOWyovy2Gm7",
             "sender": data.sender,
             "number": data.number,
 
@@ -74,7 +75,7 @@ if((Task1.length === 0)){
                 obj3 = { ...obj3, ...item };
             })
             obj1 = {
-                "api_key": "t8o8aP9tIBM6PLapJuj2KzJ5teiBbg",
+                "api_key": "9wfDCDPIQAHLxWR3IkwVOWyovy2Gm7",
                 "sender": data.sender,
                 "number": data.number,
                 "footer": "You are in main menu",
@@ -108,7 +109,7 @@ else{
         obj3 = { ...obj3, ...item };
     })
     obj1 = {
-        "api_key": "t8o8aP9tIBM6PLapJuj2KzJ5teiBbg",
+        "api_key": "9wfDCDPIQAHLxWR3IkwVOWyovy2Gm7",
         "sender": data.sender,
         "number": data.number,
         "footer": "You are in "+ data.message,
