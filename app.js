@@ -16,7 +16,7 @@ app.post('/webhook', (req, res) => {
   const message =  "vikas";
   const sender = req.body;
 console.log("req.body",req.body)
-axios.post('https://wbhkapp.herokuapp.com/api/sendMessage', {
+axios.post('https://watzapixyz.herokuapp.com/api/sendMessage', {
   "api_key": "t8o8aP9tIBM6PLapJuj2KzJ5teiBbg",
   "sender": 919354869926,
   "number": req.body.from,
