@@ -10,7 +10,7 @@ const route = require("./routes/user.routes");
 app.use(bodyParser.json());
 const port = process.env.PORT;
 const host = process.env.BASE_URL;
-mongoose.set('strictQuery', false);
+// mongoose.set('strictQuery', false);
 
 app.post('/webhook', (req, res) => {
   const message =  "vikas";
